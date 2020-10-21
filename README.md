@@ -58,5 +58,29 @@ public class HelloController {
 
     }
 }
-
 ```
+## Java Classes
+### Optional
+- NullPointException을 방지할 수 있도록 하는 클래스
+- 빈 객체를 다음과 같이 생성할 수 있음
+- Optionional<Object> obj=Optional.of("String);
+- Optional<Object> obj=Optional.empty()
+- .ifPresent() : 객체가 있다면
+
+### List
+- 리스트는 인터페이스이고 ArrayList, LinkedList 들은 List에 상속된 클래스
+
+### Map, HashMap
+- {key,value} 로 구성됨
+- map.put(key,value)
+- map.get(key)->지정된 key에 매핑된 value 반환
+- map.values() -> Hashmap에 저장된 모든 값을 컬렉션 형태로 반환
+- Map<K,V> is an interface, HashMap<K,V> is a class that implements Map
+- ex) `private static Map<Long,Member> store = new HashMap<>();`
+
+
+## functions
+### assertThat
+- import static org.assertj.core.api.Assertions.*;
+-`assertThat(T actual, Matcher<? super T> matcher)`
+- 두 값이 동일한지 체크
