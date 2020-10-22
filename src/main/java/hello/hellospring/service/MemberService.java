@@ -2,14 +2,18 @@ package hello.hellospring.service;
 
 import hello.hellospring.domain.Member;
 import hello.hellospring.repository.MemberReopsitory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
+@Service
 public class MemberService {
 
     private final MemberReopsitory memberReopsitory;
 
+    @Autowired // MemberRepository가 필요하구하 하고 spring container의 MemberRepository를 넣어줌
     public MemberService(MemberReopsitory memberReopsitory) { // 생성자 // constructor
         this.memberReopsitory = memberReopsitory; // memberService를 외부에서 넣어주도록 바꿈
     }

@@ -6,9 +6,9 @@
 
 ## Spring Derectory 구조
 ### src.main.java.hello.hellospring.(controller/comain/repository/service)
-- controller : 어떤 주소에서 어떤 방식으로 무엇을 요청하고 응답할 것인지
+- controller : 외부 요청을 받음, 어떤 주소에서 어떤 방식으로 무엇을 요청하고 응답할 것인지
 - domain : Member Class, getter/setter
-- repository
+- repository : 데이터 저장
     - MemberRepository(Interface)
     - MemoryMemberRepository(Class) : Member 객체를 store에 어떻게 저장, 검색, 리스트, 초기화 할 것인지
 - service : MemberRepository를 이용하여 Member를 어떻게 가입시키고, 조회할 것인지 (서비스 차원), MemoryMemberRepository의 함수들 이용
@@ -27,6 +27,8 @@
 - @RequestBody : 클라이언트에서 서버로 필요한 데이터를 전송하기 위해서 JSON이라는 데이터를 요청 본문에 담아서 서버로 보내면, 서버에서는 @RequestBody 어노테이션을 사용하여 HTTP 요청 본문에 담긴 값들을 자바 객체로 변환 시켜, 객체에 저장시킵니다.
 - @Test : Junit을 사용한 단위 테스트 제공
 - @BeforeEach, @AfterEach : 각각의 단위테스트 전,후에 처리될 메소드
+- @Service,@Controller,@Repository : @Component의 특수한 케이스
+- @Autowired : 
 
 ## Java Classes
 ### Optional
