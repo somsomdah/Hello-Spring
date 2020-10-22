@@ -11,6 +11,7 @@ import java.util.List;
 class MemoryMemberRepositoryTest {
 
     MemoryMemberRepository repository=new MemoryMemberRepository();
+
     @AfterEach
     public void afterEach(){
         repository.clearStore();

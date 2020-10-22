@@ -2,14 +2,18 @@ package hello.hellospring.service;
 
 import hello.hellospring.domain.Member;
 import hello.hellospring.repository.MemberReopsitory;
-import hello.hellospring.repository.MemoryMemberRepository;
 
 import java.util.List;
 import java.util.Optional;
 
 public class MemberService {
 
-    private final MemberReopsitory memberReopsitory=new MemoryMemberRepository(); //MemoryMemberRepository 객체 생성
+    private final MemberReopsitory memberReopsitory;
+
+    public MemberService(MemberReopsitory memberReopsitory) { // 생성자 // constructor
+        this.memberReopsitory = memberReopsitory; // memberService를 외부에서 넣어주도록 바꿈
+    }
+
 
     public long join(Member member) {
         validateDuplicateMember(member); // 중복된 이름이 있는지 확인
@@ -37,6 +41,7 @@ public class MemberService {
     }
 
     public Optional<Member> findOne(Long memberId){
+
         return memberReopsitory.findById(memberId);
     }
 

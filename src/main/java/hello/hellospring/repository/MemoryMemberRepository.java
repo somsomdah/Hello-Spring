@@ -18,7 +18,6 @@ public class MemoryMemberRepository implements MemberReopsitory{
 
     @Override
     public Optional<Member> findById(Long id) {
-
         return Optional.ofNullable(store.get(id));//아이디와 멤버객체가 저장된 map, store에서 id로 Optional<Member> 찾기
     }
 
